@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amatic+SC">
+<style>
+body, html {height: 100%}
+body,h1,h2,h3,h4,h5,h6 {font-family: "Constantia", sans-serif;}
+.menu {display: none}
+.bgimg {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("cupcakes.png");
+    min-height: 90%;
+}
+.button {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 30px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #ffffff;
+  background-color: red;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px black;
+}
+.button:hover {background-color: #262626}
+
+.button:active {
+  background-color: black;
+  box-shadow: 0 5px black;
+  transform: translateY(4px);
+}
+</style>
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top w3-hide-small">
+  <div class="w3-bar w3-xlarge w3-black w3-opacity w3-hover-opacity-off" id="myNavbar">
+    <a href="#" class="w3-bar-item w3-button">HOME</a>
+    <a href="menu.html" class="w3-bar-item w3-button">MENU</a>
+    <a href="#about" class="w3-bar-item w3-button">ABOUT</a>
+    <a href="#googleMap" class="w3-bar-item w3-button">CONTACT</a>
+  </div>
+</div>
+
+
+<!-- Menu Container -->
+<div class="w3-container w3-black w3-padding-64 w3-xxlarge" id="menu">
+  <div class="w3-content">
+
+    <h1 class="w3-center w3-jumbo" style="margin-bottom:64px">MY CART</h1>
+
+
+<div class="container">
+	    <div class="row">
+            <form action="#" method="get">
+            </form>
+        </div>
+    <center><button type="submit" class="button" onclick="view_cart();">View Cart</button> <a class="button" href="menu.html">Add more to cart</a> <button type="submit" class="button" onclick="del_order();">Cancel Order</button></center>
+		<div id ="mycart" class= "col-md-12 col-sm-12 col-xs-12">
+    	 <table class="table" cellspacing="0">
+                    <!--<thead class='table-head'>-->
+                         <!--<tr class='table-head'>-->
+                            <!--<th>Food Name</th>-->
+                            <!--<th>Clicks</th>-->
+                            <!--<th>Casein</th>-->
+                            <!--<th>Gluten?</th>-->
+                            <!--<th>Calories</th>-->
+                            <!--<th>Total Calories</th>-->
+                            <!--<th>Protein</th>-->
+                            <!--<th>Total Protein</th>-->
+                            <!--<th>Cholesterol</th>-->
+                            <!--<th>Total Cholesterol</th>-->
+                        <!--</tr>-->
+                    <!--</thead>-->
+                </table>
+
+         </div>
+</div>
+
+    <script src="jQuery-2.1.4.min.js"></script>
+    <script src="app.js"></script>
+  </div>
+</div>
+
+<script>
+
+// Tabbed Menu
+function openMenu(evt, menuName) {
+  var i, x, tablinks;
+  x = document.getElementsByClassName("menu");
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < x.length; i++) {
+     tablinks[i].className = tablinks[i].className.replace(" w3-red", "");
+  }
+  document.getElementById(menuName).style.display = "block";
+  evt.currentTarget.firstElementChild.className += " w3-red";
+}
+document.getElementById("myLink").click();
+</script>
+
+</body>
+</html>

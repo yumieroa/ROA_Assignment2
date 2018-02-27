@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amatic+SC">
+<style>
+body, html {height: 100%}
+body,h1,h2,h3,h4,h5,h6 {font-family: "Constantia", sans-serif;}
+.menu {display: none}
+.bgimg {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("cupcakes.png");
+    min-height: 90%;
+}
+.button {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 30px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #ffffff;
+  background-color: red;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px black;
+}
+.button:hover {background-color: #262626}
+
+.button:active {
+  background-color: black;
+  box-shadow: 0 5px black;
+  transform: translateY(4px);
+}
+</style>
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top w3-hide-small">
+  <div class="w3-bar w3-xlarge w3-black w3-opacity w3-hover-opacity-off" id="myNavbar">
+    <a href="#" class="w3-bar-item w3-button">HOME</a>
+    <a href="menu.html" class="w3-bar-item w3-button">MENU</a>
+    <a href="#about" class="w3-bar-item w3-button">ABOUT</a>
+    <a href="#googleMap" class="w3-bar-item w3-button">CONTACT</a>
+  </div>
+</div>
+
+
+<!-- Menu Container -->
+<div class="w3-container w3-black w3-padding-64 w3-xxlarge" id="menu">
+  <div class="w3-content">
+
+    <h1 class="w3-center w3-jumbo" style="margin-bottom:64px">THE MENU</h1>
+    <div class="w3-row w3-center w3-border w3-border-dark-grey">
+      <a href="javascript:void(0)" onclick="openMenu(event, 'Cakes');" id="myLink">
+        <div class="w3-col s4 tablink w3-padding-large w3-hover-red">Cakes</div>
+      </a>
+      <a href="javascript:void(0)" onclick="openMenu(event, 'Pasta');">
+        <div class="w3-col s4 tablink w3-padding-large w3-hover-red">Pasta</div>
+      </a>
+      <a href="javascript:void(0)" onclick="openMenu(event, 'Pastries');">
+        <div class="w3-col s4 tablink w3-padding-large w3-hover-red">Pastries</div>
+      </a>
+    </div>
+
+    <div id="Cakes" class="w3-container menu w3-padding-32 w3-white">
+      <h1><b>Chocolate Moist</b> <span class="w3-right w3-tag w3-dark-grey w3-round">‎₱700 per layer</span></h1>
+      <p class="w3-text-grey">Moist chocolate cake covered in chocolate ganache frosting with yema filling.</p>
+      <hr>
+
+      <h1><b>Chocolate Square</b> <span class="w3-right w3-tag w3-dark-grey w3-round">‎₱350 per layer</span></h1>
+      <p class="w3-text-grey">Chocolate moist cake covered in chocolate ganache with cherries on top.</p>
+      <hr>
+
+      <h1><b>Black Forest Cake</b> <span class="w3-right w3-tag w3-dark-grey w3-round">‎₱350 per layer</span></h1>
+      <p class="w3-text-grey">Chocolate cake with whipped cream covered in chocolate shavings.</p>
+      <hr>
+
+      <h1><b>Ube Cake</b> <span class="w3-right w3-tag w3-dark-grey w3-round">‎₱350 per layer</span></h1>
+      <p class="w3-text-grey">Ube cake with whipped cream covered in ube cake crumbs.</p>
+
+      <h1><b>Crema de Fruta</b> <span class="w3-right w3-tag w3-dark-grey w3-round">‎₱350 per layer</span></h1>
+      <p class="w3-text-grey">Chiffon cake covered in yema frosting topped with assorted fruits.</p>
+      <hr>
+
+      <h1><b>Coffee Caramel Cake</b> <span class="w3-right w3-tag w3-dark-grey w3-round">‎₱350 per layer</span></h1>
+      <p class="w3-text-grey">Coffee-flavored cake covered in whipped cream, topped with caramel syrup.</p>
+
+      <hr>
+      <h1><b>Cassava Cake</b> <span class="w3-right w3-tag w3-dark-grey w3-round">‎₱350 per layer</span></h1>
+      <p class="w3-text-grey">A Filipino favorite!</p>
+      <hr>
+
+        <form>
+          <select name="prod_name" id="prod_name">
+        <option value="placeholder">Product</option>
+        <option value="Chocolate Mois">Chocolate Moist</option>
+        <option value="Chocolate Square">Chocolate Square</option>
+        <option value="Black Forest Cake">Black Forest Cake</option>
+        <option value="Ube Cake">Ube Cake</option>
+        <option value="Crema de Fruta">Crema de Fruta</option>
+        <option value="Coffee Carammel">Coffe Caramel Cake</option>
+        <option value="Cassava Cake">Cassava Cake</option>
+        </select>
+          <select name="order_quantity" id="order_quantity">
+        <option value="placeholder">Quantity</option>
+        <option value="1">1 layer</option>
+        <option value="2">2 layers</option>
+        <option value="3">3 layers</option>
+        <option value="4">4 layers</option>
+        </select>
+            <br>
+  Full name:<br>
+  <input type="text" name="cust_name" id="cust_name"><br>
+  E-mail:<br>
+  <input type="email" name="email" id="email"><br>
+  Contact Number:<br>
+  <input type="text" name="contact" id="contact"><br>
+  Mailing Address:<br>
+  <input type="text" name="address" id="address"><br>
+          <br>
+          <button class="button" type="submit" onclick="orderslip();">Add to Cart</button>
+</form>
+    </div>
+
+    <div id="Pasta" class="w3-container menu w3-padding-32 w3-white">
+
+      <h1><b>Baked Macaroni</b> <span class="w3-right w3-tag w3-dark-grey w3-round">‎₱700 per layer</span></h1>
+      <p class="w3-text-grey">Macaroni pasta smothered in tomato sauce and topped with white sauce and cheese.</p>
+      <hr>
+
+      <h1><b>Baked Spaghetti</b> <span class="w3-right w3-tag w3-dark-grey w3-round">‎₱700 per layer</span></h1>
+      <p class="w3-text-grey">Spaghetti smothered in tomato sauce, topped with white sauce and cheese.</p>
+      <hr>
+
+        <form>
+          <select name="prod_name" id="prod_name">
+        <option value="placeholder">Product</option>
+        <option value="Baked Macaroni">Baked Macaroni</option>
+        <option value="Baked Spaghetti">Baked Spaghetti</option>
+        </select>
+          <select name="order_quantity" id="order_quantity">
+        <option value="placeholder">Quantity</option>
+        <option value="1">1 layer</option>
+        <option value="2">2 layers</option>
+        <option value="3">3 layers</option>
+        <option value="4">4 layers</option>
+        </select>
+            <br>
+  Full name:<br>
+  <input type="text" name="cust_name" id="cust_name"><br>
+  E-mail:<br>
+  <input type="email" name="email" id="email"><br>
+  Contact Number:<br>
+  <input type="text" name="contact" id="contact"><br>
+  Mailing Address:<br>
+  <input type="text" name="address" id="address"><br>
+          <br>
+          <button class="button" type="submit" onclick="orderslip();">Add to Cart</button>
+</form>
+    </div>
+
+
+    <div id="Pastries" class="w3-container menu w3-padding-32 w3-white">
+
+      <h1><b>Pineapple Tart</b> <span class="w3-right w3-tag w3-dark-grey w3-round">‎₱35</span></h1>
+      <p class="w3-text-grey">Tart filled with delicious pineapple filing.</p>
+
+      <h1><b>Buko Tart</b> <span class="w3-right w3-tag w3-dark-grey w3-round">‎₱30</span></h1>
+      <p class="w3-text-grey">Tart filled with delicious buko filling.</p>
+      <hr>
+
+      <h1><b>Torta</b> <span class="w3-right w3-tag w3-dark-grey w3-round">‎₱10</span></h1>
+      <p class="w3-text-grey">A filipino soft cake topped with cheese and sugar.</p>
+      <hr>
+
+      <h1><b>Macaroons</b> <span class="w3-right w3-tag w3-dark-grey w3-round">‎₱3</span></h1>
+      <p class="w3-text-grey">Coconut custard pastry.</p>
+      <hr>
+
+        <form>
+          <select name="prod_name" id="prod_name">
+        <option value="placeholder">Product</option>
+        <option value="Pineapple Tart">Pineapple Tart</option>
+        <option value="Buko Tart">Buko Tart</option>
+        <option value="Torta">Torta</option>
+        <option value="Macaroons">Macaroons</option>
+        </select>
+          <select name="order_quantity" id="order_quantity">
+        <option value="placeholder">Quantity</option>
+        <option value="1">10 pcs</option>
+        <option value="2">20 pcs</option>
+        <option value="3">30 pcs</option>
+        <option value="4">40 pcs</option>
+        </select>
+            <br>
+  Full name:<br>
+  <input type="text" name="cust_name" id="cust_name"><br>
+  E-mail:<br>
+  <input type="email" name="email" id="email"><br>
+  Contact Number:<br>
+  <input type="text" name="contact" id="contact"><br>
+  Mailing Address:<br>
+  <input type="text" name="address" id="address"><br>
+          <br>
+          <button class="button" type="submit" onclick="orderslip();">Add to Cart</button>
+</form>
+    </div><br>
+
+
+    <script src="jQuery-2.1.4.min.js"></script>
+    <script src="app.js"></script>
+  </div>
+</div>
+
+<script>
+
+// Tabbed Menu
+function openMenu(evt, menuName) {
+  var i, x, tablinks;
+  x = document.getElementsByClassName("menu");
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < x.length; i++) {
+     tablinks[i].className = tablinks[i].className.replace(" w3-red", "");
+  }
+  document.getElementById(menuName).style.display = "block";
+  evt.currentTarget.firstElementChild.className += " w3-red";
+}
+document.getElementById("myLink").click();
+</script>
+
+</body>
+</html>
