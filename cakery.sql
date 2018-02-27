@@ -31,3 +31,20 @@ $$
   select prod_name, order_quantity, order_total from orderslip;
 $$
  language 'sql';
+
+create or replace function delete_order(in par_del text) returns text as
+$$
+  declare
+    loc_res text;
+
+  begin
+     if par_del NOTNULL then
+        UPDATE orderslip SET order_quantity = null, order_total = null, cust_name = null, email = null, contact = null, address = null, prod_name = null;
+         loc_res = 'ok';
+      else
+       loc_res = 'Error';
+     end if;
+     return loc_res;
+  end;
+$$
+ language 'plpgsql';

@@ -70,3 +70,29 @@ function mycart(prod_name,order_quantity,order_total)
        '<p>Total:'+ ' ' +order_total+ '</p>'+
 	'</div>'
 }
+
+function del_order() {
+
+	$.ajax(
+		{
+			url: 'http://127.0.0.1:5000/delete_order',
+			contentType: 'application/json; charset=utf-8',
+            data: JSON.stringify({
+             }),
+			type: "POST",
+			dataType: "json",
+			error: function (e) {
+			},
+			success: function (resp) {
+                if (resp.status == 'ok') {
+                alert("Order cancelled!");
+                window.location.replace("menu.html")
+
+                 }
+				else {
+					alert("ERROR")
+				}
+
+			}
+		});
+}

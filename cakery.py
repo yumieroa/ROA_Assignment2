@@ -50,6 +50,13 @@ def view_cart():
      recs.append({"prod_name": str(r[0]), "order_quantity": str(r[1]), "order_total": str(r[2])})
     return jsonify({'status': 'ok', 'entries': recs, 'count': len(recs)})
 
+@app.route('/delete_order', methods=['POST'])
+def delete_order():
+
+    res = spcall("delete_order", ('1'),True)
+
+    return jsonify({'status': 'ok', 'message': res[0][0]})
+
 
 @app.after_request
 def add_cors(resp):
