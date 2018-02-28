@@ -60,3 +60,51 @@ $$
   end;
 $$
  language 'plpgsql';
+
+create or replace function confirmed(in con BOOLEAN) returns text as
+$$
+ declare
+    loc_res text;
+
+    loc_con BOOLEAN;
+  begin
+    select into loc_con confirmed from orderslip;
+     if con NOTNULL then
+      update orderslip set confirmed = 'True';
+       loc_res = 'ok';
+  else
+       loc_res = 'Error';
+     end if;
+     return loc_res;
+  end;
+
+$$
+ language 'sql';
+
+create or replace function confirmed(in con BOOLEAN) returns text as
+$$
+  declare
+    loc_res text;
+
+  loc_con BOOLEAN;
+
+  begin
+    select into loc_con confirmed from orderslip;
+     if con NOTNULL then
+
+       update orderslip set confirmed =  'True';
+       loc_res = 'ok';
+  else
+       loc_res = 'Error';
+     end if;
+     return loc_res;
+  end;
+$$
+ language 'plpgsql';
+
+create or replace function view_det(out VARCHAR, out VARCHAR, out VARCHAR, out VARCHAR, out VARCHAR, out VARCHAR, out VARCHAR) returns setof record as
+$$
+
+  select order_quantity, prod_name, order_total, cust_name, email, contact, address from orderslip where confirmed = 'True';
+$$
+ language 'sql';

@@ -18,8 +18,8 @@
     </database>
     <schema id="6" parent="2" name="public">
       <ObjectId>2200</ObjectId>
-      <IntrospectionTimestamp>2018-03-01.01:44:22.061</IntrospectionTimestamp>
-      <IntrospectionStateNumber>1514</IntrospectionStateNumber>
+      <IntrospectionTimestamp>2018-03-01.02:27:56.381</IntrospectionTimestamp>
+      <IntrospectionStateNumber>1525</IntrospectionStateNumber>
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
@@ -40,13 +40,22 @@
     </schema>
     <table id="12" parent="6" name="orderslip">
       <ObjectId>49710</ObjectId>
-      <StateNumber>1483</StateNumber>
+      <StateNumber>1518</StateNumber>
     </table>
     <table id="13" parent="6" name="products">
       <ObjectId>49705</ObjectId>
       <StateNumber>1448</StateNumber>
     </table>
-    <routine id="14" parent="6" name="delete_order">
+    <routine id="14" parent="6" name="confirmed">
+      <ObjectId>66136</ObjectId>
+      <StateNumber>1521</StateNumber>
+      <VolatilityKind>volatile</VolatilityKind>
+      <ArgumentsDefinition>con boolean</ArgumentsDefinition>
+      <ResultsDefinition>text</ResultsDefinition>
+      <LanguageName>plpgsql</LanguageName>
+      <RoutineKind>function</RoutineKind>
+    </routine>
+    <routine id="15" parent="6" name="delete_order">
       <ObjectId>66123</ObjectId>
       <StateNumber>1496</StateNumber>
       <VolatilityKind>volatile</VolatilityKind>
@@ -55,7 +64,7 @@
       <LanguageName>plpgsql</LanguageName>
       <RoutineKind>function</RoutineKind>
     </routine>
-    <routine id="15" parent="6" name="getpassword">
+    <routine id="16" parent="6" name="getpassword">
       <ObjectId>49716</ObjectId>
       <StateNumber>1442</StateNumber>
       <VolatilityKind>volatile</VolatilityKind>
@@ -64,7 +73,7 @@
       <LanguageName>plpgsql</LanguageName>
       <RoutineKind>function</RoutineKind>
     </routine>
-    <routine id="16" parent="6" name="login">
+    <routine id="17" parent="6" name="login">
       <ObjectId>49715</ObjectId>
       <StateNumber>1441</StateNumber>
       <VolatilityKind>volatile</VolatilityKind>
@@ -73,7 +82,7 @@
       <LanguageName>plpgsql</LanguageName>
       <RoutineKind>function</RoutineKind>
     </routine>
-    <routine id="17" parent="6" name="orderslip">
+    <routine id="18" parent="6" name="orderslip">
       <ObjectId>66127</ObjectId>
       <StateNumber>1514</StateNumber>
       <VolatilityKind>volatile</VolatilityKind>
@@ -82,7 +91,7 @@
       <LanguageName>plpgsql</LanguageName>
       <RoutineKind>function</RoutineKind>
     </routine>
-    <routine id="18" parent="6" name="view_cart">
+    <routine id="19" parent="6" name="view_cart">
       <ObjectId>66120</ObjectId>
       <StateNumber>1489</StateNumber>
       <VolatilityKind>volatile</VolatilityKind>
@@ -92,145 +101,207 @@
       <RoutineKind>function</RoutineKind>
       <ReturnsSet>1</ReturnsSet>
     </routine>
-    <column id="19" parent="12" name="order_quantity">
+    <routine id="20" parent="6" name="view_det">
+      <ObjectId>66138</ObjectId>
+      <StateNumber>1525</StateNumber>
+      <VolatilityKind>volatile</VolatilityKind>
+      <ArgumentsDefinition>OUT character varying, OUT character varying, OUT character varying, OUT character varying, OUT character varying, OUT character varying, OUT character varying</ArgumentsDefinition>
+      <ResultsDefinition>SETOF record</ResultsDefinition>
+      <LanguageName>sql</LanguageName>
+      <RoutineKind>function</RoutineKind>
+      <ReturnsSet>1</ReturnsSet>
+    </routine>
+    <column id="21" parent="12" name="order_quantity">
       <Position>2</Position>
       <DataType>varchar|0</DataType>
       <StateNumber>1483</StateNumber>
     </column>
-    <column id="20" parent="12" name="order_total">
+    <column id="22" parent="12" name="order_total">
       <Position>3</Position>
       <DataType>varchar|0</DataType>
       <StateNumber>1447</StateNumber>
     </column>
-    <column id="21" parent="12" name="cust_name">
+    <column id="23" parent="12" name="cust_name">
       <Position>5</Position>
       <DataType>varchar|0</DataType>
       <NotNull>1</NotNull>
       <StateNumber>1453</StateNumber>
     </column>
-    <column id="22" parent="12" name="email">
+    <column id="24" parent="12" name="email">
       <Position>6</Position>
       <DataType>varchar|0</DataType>
       <NotNull>1</NotNull>
       <StateNumber>1454</StateNumber>
     </column>
-    <column id="23" parent="12" name="contact">
+    <column id="25" parent="12" name="contact">
       <Position>7</Position>
       <DataType>varchar|0</DataType>
       <NotNull>1</NotNull>
       <StateNumber>1455</StateNumber>
     </column>
-    <column id="24" parent="12" name="address">
+    <column id="26" parent="12" name="address">
       <Position>8</Position>
       <DataType>varchar|0</DataType>
       <NotNull>1</NotNull>
       <StateNumber>1456</StateNumber>
     </column>
-    <column id="25" parent="12" name="prod_name">
+    <column id="27" parent="12" name="prod_name">
       <Position>11</Position>
       <DataType>varchar|0</DataType>
       <StateNumber>1479</StateNumber>
     </column>
-    <column id="26" parent="13" name="prod_name">
+    <column id="28" parent="12" name="confirmed">
+      <Position>12</Position>
+      <DataType>boolean|0</DataType>
+      <StateNumber>1518</StateNumber>
+    </column>
+    <column id="29" parent="13" name="prod_name">
       <Position>2</Position>
       <DataType>varchar|0</DataType>
       <NotNull>1</NotNull>
       <StateNumber>1448</StateNumber>
     </column>
-    <column id="27" parent="13" name="prod_desc">
+    <column id="30" parent="13" name="prod_desc">
       <Position>3</Position>
       <DataType>varchar|0</DataType>
       <StateNumber>1448</StateNumber>
     </column>
-    <column id="28" parent="13" name="prod_price">
+    <column id="31" parent="13" name="prod_price">
       <Position>4</Position>
       <DataType>varchar|0</DataType>
       <NotNull>1</NotNull>
       <StateNumber>1448</StateNumber>
     </column>
-    <index id="29" parent="13" name="products_prod_name_pk">
+    <index id="32" parent="13" name="products_prod_name_pk">
       <ObjectId>57901</ObjectId>
       <ColNames>prod_name</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="30" parent="13" name="products_prod_name_pk">
+    <key id="33" parent="13" name="products_prod_name_pk">
       <ObjectId>57902</ObjectId>
       <ColNames>prod_name</ColNames>
       <UnderlyingIndexName>products_prod_name_pk</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <argument id="31" parent="14" name="par_del">
+    <argument id="34" parent="14" name="con">
       <Position>1</Position>
-      <DataType>text|0</DataType>
+      <DataType>boolean|0</DataType>
     </argument>
-    <argument id="32" parent="14">
+    <argument id="35" parent="14">
       <ArgumentDirection>R</ArgumentDirection>
       <DataType>text|0</DataType>
     </argument>
-    <argument id="33" parent="15" name="par_username">
+    <argument id="36" parent="15" name="par_del">
       <Position>1</Position>
       <DataType>text|0</DataType>
     </argument>
-    <argument id="34" parent="15">
+    <argument id="37" parent="15">
       <ArgumentDirection>R</ArgumentDirection>
       <DataType>text|0</DataType>
     </argument>
-    <argument id="35" parent="16" name="par_username">
+    <argument id="38" parent="16" name="par_username">
       <Position>1</Position>
       <DataType>text|0</DataType>
     </argument>
-    <argument id="36" parent="16" name="par_password">
+    <argument id="39" parent="16">
+      <ArgumentDirection>R</ArgumentDirection>
+      <DataType>text|0</DataType>
+    </argument>
+    <argument id="40" parent="17" name="par_username">
+      <Position>1</Position>
+      <DataType>text|0</DataType>
+    </argument>
+    <argument id="41" parent="17" name="par_password">
       <Position>2</Position>
       <DataType>text|0</DataType>
     </argument>
-    <argument id="37" parent="16">
+    <argument id="42" parent="17">
       <ArgumentDirection>R</ArgumentDirection>
       <DataType>text|0</DataType>
     </argument>
-    <argument id="38" parent="17" name="oprod">
+    <argument id="43" parent="18" name="oprod">
       <Position>1</Position>
       <DataType>text|0</DataType>
     </argument>
-    <argument id="39" parent="17" name="oqty">
+    <argument id="44" parent="18" name="oqty">
       <Position>2</Position>
       <DataType>text|0</DataType>
     </argument>
-    <argument id="40" parent="17" name="oname">
+    <argument id="45" parent="18" name="oname">
       <Position>3</Position>
       <DataType>text|0</DataType>
     </argument>
-    <argument id="41" parent="17" name="omail">
+    <argument id="46" parent="18" name="omail">
       <Position>4</Position>
       <DataType>text|0</DataType>
     </argument>
-    <argument id="42" parent="17" name="ocontact">
+    <argument id="47" parent="18" name="ocontact">
       <Position>5</Position>
       <DataType>text|0</DataType>
     </argument>
-    <argument id="43" parent="17" name="oadd">
+    <argument id="48" parent="18" name="oadd">
       <Position>6</Position>
       <DataType>text|0</DataType>
     </argument>
-    <argument id="44" parent="17">
+    <argument id="49" parent="18">
       <ArgumentDirection>R</ArgumentDirection>
       <DataType>text|0</DataType>
     </argument>
-    <argument id="45" parent="18">
+    <argument id="50" parent="19">
       <Position>1</Position>
       <ArgumentDirection>O</ArgumentDirection>
       <DataType>varchar|0</DataType>
     </argument>
-    <argument id="46" parent="18">
+    <argument id="51" parent="19">
       <Position>2</Position>
       <ArgumentDirection>O</ArgumentDirection>
       <DataType>varchar|0</DataType>
     </argument>
-    <argument id="47" parent="18">
+    <argument id="52" parent="19">
       <Position>3</Position>
       <ArgumentDirection>O</ArgumentDirection>
       <DataType>varchar|0</DataType>
     </argument>
-    <argument id="48" parent="18">
+    <argument id="53" parent="19">
+      <ArgumentDirection>R</ArgumentDirection>
+      <DataType>setof record|0</DataType>
+    </argument>
+    <argument id="54" parent="20">
+      <Position>1</Position>
+      <ArgumentDirection>O</ArgumentDirection>
+      <DataType>varchar|0</DataType>
+    </argument>
+    <argument id="55" parent="20">
+      <Position>2</Position>
+      <ArgumentDirection>O</ArgumentDirection>
+      <DataType>varchar|0</DataType>
+    </argument>
+    <argument id="56" parent="20">
+      <Position>3</Position>
+      <ArgumentDirection>O</ArgumentDirection>
+      <DataType>varchar|0</DataType>
+    </argument>
+    <argument id="57" parent="20">
+      <Position>4</Position>
+      <ArgumentDirection>O</ArgumentDirection>
+      <DataType>varchar|0</DataType>
+    </argument>
+    <argument id="58" parent="20">
+      <Position>5</Position>
+      <ArgumentDirection>O</ArgumentDirection>
+      <DataType>varchar|0</DataType>
+    </argument>
+    <argument id="59" parent="20">
+      <Position>6</Position>
+      <ArgumentDirection>O</ArgumentDirection>
+      <DataType>varchar|0</DataType>
+    </argument>
+    <argument id="60" parent="20">
+      <Position>7</Position>
+      <ArgumentDirection>O</ArgumentDirection>
+      <DataType>varchar|0</DataType>
+    </argument>
+    <argument id="61" parent="20">
       <ArgumentDirection>R</ArgumentDirection>
       <DataType>setof record|0</DataType>
     </argument>

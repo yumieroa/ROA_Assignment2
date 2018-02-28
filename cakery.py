@@ -57,6 +57,25 @@ def delete_order():
     return jsonify({'status': 'ok', 'message': res[0][0]})
 
 
+@app.route('/confirmed/', methods=['POST'])
+def confirmed():
+
+    res = spcall("confirmed", ('1'),True)
+
+    return jsonify({'status': 'ok', 'message': res[0][0]})
+
+@app.route('/view_det', methods=['GET'])
+def view_det():
+    res = spcall('view_det', (), True)
+
+    if 'Error' in str(res[0][0]):
+        return jsonify({'status': 'error', 'message': res[0][0]})
+
+    recs = []
+    for r in res:
+     recs.append({"order_quantity": str(r[0]), "prod_name": str(r[1]), "order_total": str(r[2]),"cust_name": str(r[3]),"email": str(r[4]), "contact": str(r[5]), "address": str(r[6])})
+    return jsonify({'status': 'ok', 'entries': recs, 'count': len(recs)})
+
 @app.after_request
 def add_cors(resp):
     resp.headers['Access-Control-Allow-Origin'] = flask.request.headers.get('Origin', '*')

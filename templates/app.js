@@ -96,3 +96,77 @@ function del_order() {
 			}
 		});
 }
+
+function confirmed() {
+
+	$.ajax(
+		{
+			url: 'http://127.0.0.1:5000/confirmed/',
+			contentType: 'application/json; charset=utf-8',
+            data: JSON.stringify({
+             }),
+			type: "POST",
+			dataType: "json",
+			error: function (e) {
+			},
+			success: function (resp) {
+                if (resp.status == 'ok') {
+                alert("Order confirmed!");
+                window.location.replace("confirmed.html")
+
+                 }
+				else {
+					alert("ERROR")
+				}
+
+			}
+		});
+}
+
+function view_det(){
+
+	 $("#myorder").show();
+
+$.ajax({
+    		url: 'http://127.0.0.1:5000/view_det',
+    		type: "GET",
+    		dataType: "json",
+    		success: function(resp) {
+
+				if (resp.status  == 'ok') {
+				   for (i = 0; i < resp.count; i++)
+                                  {
+                                       order_quantity = resp.entries[i].order_quantity;
+									   prod_name = resp.entries[i].prod_name;
+									   order_total = resp.entries[i].order_total;
+									   cust_name = resp.entries[i].cust_name;
+									   email = resp.entries[i].email;
+									   contact = resp.entries[i].contact;
+									   address = resp.entries[i].address;
+									   $("#myorder").append(myorder(order_quantity, prod_name, order_total, cust_name, email, contact, address));
+
+                                  }
+
+
+
+				} else
+				{
+                                       $("#myorder").html("");
+					alert(resp.message);
+				}
+    		}
+		});
+}
+
+function myorder(order_quantity,prod_name,order_total, cust_name, email, contact, address)
+{
+   return '<div class="col-md-12 col-sm-12 col-xs-12" >' +
+       '<p>Quantity: '+ ' ' +order_quantity+  '</p>'+
+       '<p>Product:'+ ' ' +prod_name+ '</p>'+
+       '<p>Total:'+ ' ' +order_total+ '</p>'+
+       '<p>Customer Name:'+ ' ' +cust_name+ '</p>'+
+       '<p>E-mail:'+ ' ' +email+ '</p>'+
+       '<p>Contact:'+ ' ' +contact+ '</p>'+
+       '<p>Address:'+ ' ' +address+ '</p>'+
+	'</div>'
+}
