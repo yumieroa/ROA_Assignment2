@@ -1,7 +1,6 @@
 #!flask/bin/python
-from flask import Flask, url_for, jsonify, request, render_template, send_from_directory, redirect
-from flask.ext.httpauth import HTTPBasicAuth
-from flask.ext.uploads import UploadSet, configure_uploads, IMAGES
+from flask import Flask, url_for, jsonify, request
+from flask_httpauth import HTTPBasicAuth
 import sys, os, flask
 import model
 
@@ -70,9 +69,6 @@ def add_cors(resp):
     if app.debug:
         resp.headers["Access-Control-Max-Age"] = '1'
     return resp
-
-
-
 
 if __name__ == '__main__':
     app.run(threaded=True)

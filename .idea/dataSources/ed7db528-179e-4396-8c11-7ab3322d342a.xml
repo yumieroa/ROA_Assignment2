@@ -18,8 +18,8 @@
     </database>
     <schema id="6" parent="2" name="public">
       <ObjectId>2200</ObjectId>
-      <IntrospectionTimestamp>2018-02-28.04:37:00.372</IntrospectionTimestamp>
-      <IntrospectionStateNumber>1492</IntrospectionStateNumber>
+      <IntrospectionTimestamp>2018-03-01.01:17:44.037</IntrospectionTimestamp>
+      <IntrospectionStateNumber>1510</IntrospectionStateNumber>
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
@@ -47,8 +47,8 @@
       <StateNumber>1448</StateNumber>
     </table>
     <routine id="14" parent="6" name="delete_order">
-      <ObjectId>66122</ObjectId>
-      <StateNumber>1492</StateNumber>
+      <ObjectId>66123</ObjectId>
+      <StateNumber>1496</StateNumber>
       <VolatilityKind>volatile</VolatilityKind>
       <ArgumentsDefinition>par_del text</ArgumentsDefinition>
       <ResultsDefinition>text</ResultsDefinition>
@@ -74,8 +74,8 @@
       <RoutineKind>function</RoutineKind>
     </routine>
     <routine id="17" parent="6" name="orderslip">
-      <ObjectId>57891</ObjectId>
-      <StateNumber>1461</StateNumber>
+      <ObjectId>66126</ObjectId>
+      <StateNumber>1510</StateNumber>
       <VolatilityKind>volatile</VolatilityKind>
       <ArgumentsDefinition>oprod text, oqty text, oname text, omail text, ocontact text, oadd text</ArgumentsDefinition>
       <ResultsDefinition>text</ResultsDefinition>

@@ -15,7 +15,7 @@ $$
      if oprod NOTNULL then
 
        insert into orderslip (prod_name, order_quantity, cust_name, email, contact, address) values (oprod, oqty, oname, omail, ocontact, oadd);
---        insert into orderslip (order_total) values (orderslip.order_quantity * products.prod_price);
+       update orderslip set order_total =  (cast( order_quantity as INT) * 700 )  where prod_name = 'Chocolate Moist';
        loc_res = 'ok';
   else
        loc_res = 'Error';
@@ -39,7 +39,7 @@ $$
 
   begin
      if par_del NOTNULL then
-        UPDATE orderslip SET order_quantity = null, order_total = null, cust_name = null, email = null, contact = null, address = null, prod_name = null;
+        DELETE from orderslip;
          loc_res = 'ok';
       else
        loc_res = 'Error';
