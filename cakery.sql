@@ -16,6 +16,18 @@ $$
 
        insert into orderslip (prod_name, order_quantity, cust_name, email, contact, address) values (oprod, oqty, oname, omail, ocontact, oadd);
        update orderslip set order_total =  (cast( order_quantity as INT) * 700 )  where prod_name = 'Chocolate Moist';
+       update orderslip set order_total =  (cast( order_quantity as INT) * 700 )  where prod_name = 'Chocolate Square';
+       update orderslip set order_total =  (cast( order_quantity as INT) * 700 )  where prod_name = 'Black Forest Cake';
+       update orderslip set order_total =  (cast( order_quantity as INT) * 700 )  where prod_name = 'Ube Cake';
+       update orderslip set order_total =  (cast( order_quantity as INT) * 700 )  where prod_name = 'Crema de Fruta';
+       update orderslip set order_total =  (cast( order_quantity as INT) * 700 )  where prod_name = 'Coffee Caramel Cake';
+       update orderslip set order_total =  (cast( order_quantity as INT) * 700 )  where prod_name = 'Cassava Cake';
+       update orderslip set order_total =  (cast( order_quantity as INT) * 700 )  where prod_name = 'Baked Spaghetti';
+       update orderslip set order_total =  (cast( order_quantity as INT) * 700 )  where prod_name = 'Baked Macaroni';
+       update orderslip set order_total =  (cast( order_quantity as INT) * 700 )  where prod_name = 'Pineapple Tart';
+       update orderslip set order_total =  (cast( order_quantity as INT) * 700 )  where prod_name = 'Buko Tart';
+       update orderslip set order_total =  (cast( order_quantity as INT) * 700 )  where prod_name = 'Torta';
+       update orderslip set order_total =  (cast( order_quantity as INT) * 700 )  where prod_name = 'Macaroons';
        loc_res = 'ok';
   else
        loc_res = 'Error';
