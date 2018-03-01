@@ -1,3 +1,43 @@
+create table products
+(
+	prod_name varchar not null
+		constraint products_prod_name_pk
+			primary key,
+	prod_desc varchar,
+	prod_price varchar not null
+)
+;
+
+create table orderslip
+(
+	order_quantity varchar,
+	order_total varchar,
+	cust_name varchar not null,
+	email varchar not null,
+	contact varchar not null,
+	address varchar not null,
+	prod_name varchar,
+	confirmed boolean
+)
+;
+
+insert into products (prod_name, prod_desc, prod_price) values
+('Chocolate Moist', 'Moist chocolate cake covered in chocolate ganache frosting with yema filling.', '700'),
+('Chocolate Square', 'Chocolate moist cake covered in chocolate ganache with cherries on top.', '350'),
+('Black Forest Cake', 'Chocolate cake with whipped cream covered in chocolate shavings.', '350'),
+('Ube Cake', 'Ube cake with whipped cream covered in ube cake crumbs.', '700'),
+('Crema de Furta', 'Chiffon cake covered in yema frosting topped with assorted fruits.', '350'),
+('Coffee Caramel Cake', 'Coffee-flavored cake covered in whipped cream, topped with caramel syrup', '350'),
+('Cassava Cake', 'A Filipino favorite.', '350'),
+('Baked Spaghetti', 'Spaghetti smothered in tomato sauce, topped with white sauce and cheese.', '700'),
+('Baked Macaroni', 'Macaroni pasta smothered in tomato sauce and topped with white sauce and cheese.', '700'),
+('Pineapple Tart', 'Tart filled with delicious pineapple filing.', '35'),
+('Buko Tart', 'Tart filled with delicious buko filling.', '30'),
+('Torta', 'A filipino soft cake topped with cheese and sugar.', '10'),
+('Macaroons', 'Coconut custard pastry.', '3');
+
+
+
 create or replace function orderslip(in oprod text, in oqty text, oname text, omail text, ocontact text, oadd text) returns text as
 $$
   declare

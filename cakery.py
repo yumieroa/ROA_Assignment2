@@ -20,6 +20,7 @@ def spcall(qry, param, commit=False):
         res = [("Error: " + str(sys.exc_info()[0]) + " " + str(sys.exc_info()[1]),)]
     return res
 
+#orders are saved into the database
 @app.route('/orderslip/', methods=['POST'])
 def orderslip():
 
@@ -37,6 +38,7 @@ def orderslip():
 
     return jsonify({'status': 'ok'})
 
+#to view orders that are saved into the database
 @app.route('/mycart', methods=['GET'])
 def view_cart():
     res = spcall('view_cart', (), True)
@@ -49,6 +51,7 @@ def view_cart():
      recs.append({"prod_name": str(r[0]), "order_quantity": str(r[1]), "order_total": str(r[2])})
     return jsonify({'status': 'ok', 'entries': recs, 'count': len(recs)})
 
+#to cancel order, deletes it from database
 @app.route('/delete_order', methods=['POST'])
 def delete_order():
 
@@ -56,7 +59,7 @@ def delete_order():
 
     return jsonify({'status': 'ok', 'message': res[0][0]})
 
-
+#confirm order, updates confirmed column to true
 @app.route('/confirmed/', methods=['POST'])
 def confirmed():
 
@@ -64,6 +67,7 @@ def confirmed():
 
     return jsonify({'status': 'ok', 'message': res[0][0]})
 
+#view confirmed orders only
 @app.route('/view_det', methods=['GET'])
 def view_det():
     res = spcall('view_det', (), True)
